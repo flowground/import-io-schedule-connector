@@ -1,0 +1,101 @@
+{
+    "title": "import.io",
+    "docsUrl": "http://api.docs.import.io/",
+    "url": "https://api.apis.guru/v2/specs/import.io/schedule/1.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://schedule.import.io/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "api_key": {
+                "label": "_apikey (api_key)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_extractor": {
+            "main": "./lib/actions/get_extractor.js",
+            "title": "Get the list of schedules for all your extractors",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_extractor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_extractor": {
+            "main": "./lib/actions/post_extractor.js",
+            "title": "Schedule and extractor to run at a specific time",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_extractor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_extractor__extractorId__": {
+            "main": "./lib/actions/delete_extractor__extractorId__.js",
+            "title": "Delete an existing schedule",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_extractor__extractorId__.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_extractor__extractorId__": {
+            "main": "./lib/actions/get_extractor__extractorId__.js",
+            "title": "Get the schedule of a particular extractor",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_extractor__extractorId__.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

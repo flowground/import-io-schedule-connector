@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "extractorId": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
