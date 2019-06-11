@@ -1,5 +1,5 @@
 {
-    "title": "import.io",
+    "title": "import.io (schedule)",
     "docsUrl": "http://api.docs.import.io/",
     "url": "https://api.apis.guru/v2/specs/import.io/schedule/1.0/swagger.json",
     "envVars": {},
@@ -18,7 +18,7 @@
                 "label": "Custom Server URL",
                 "viewClass": "TextFieldView"
             },
-            "api_key": {
+            "auth_api_key": {
                 "label": "_apikey (api_key)",
                 "viewClass": "TextFieldView"
             }
